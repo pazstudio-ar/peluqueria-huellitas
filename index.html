@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Peluquería Canina Huellitas · Baño y corte en Sarandí</title>
+<meta name="description" content="Peluquería canina en Sarandí, Avellaneda. Baño, corte y adaptación para perros miedosos. Pedí turno por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Idea: la ficha que Giuli le pide a cada perro, convertida en la puerta de entrada de la web. */
+:root{
+  --fondo:#F4F9FC;
+  --blanco:#FFFFFF;
+  --celeste:#4FB3E6;
+  --celeste-osc:#1F86BD;
+  --celeste-claro:#E3F3FB;
+  --negro:#17191C;
+  --gris:#5E6670;
+  --linea:#D9E8F0;
+  --h:"Fredoka",system-ui,sans-serif;
+  --f:"Nunito Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--fondo);color:var(--negro);font:400 1.0625rem/1.6 var(--f);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit}
+:focus-visible{outline:3px solid var(--celeste-osc);outline-offset:2px}
+.wrap{width:min(1080px,100% - 36px);margin-inline:auto}
+h1,h2,h3{font-family:var(--h);line-height:1.08;margin:0;font-weight:600}
+h2{font-size:clamp(1.9rem,4.4vw,2.6rem)}
+.intro{margin:10px 0 28px;color:var(--gris);max-width:56ch}
+section{padding:64px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:2px solid var(--negro);border-radius:14px;background:var(--negro);color:#fff;font-weight:800;text-decoration:none;cursor:pointer}
+.btn:hover{background:#000}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-claro{background:var(--blanco);color:var(--negro)}
+.btn-claro:hover{background:var(--celeste-claro)}
+
+/* barra */
+.barra .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:70px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca .sello{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--negro);color:#fff}
+.marca .sello svg{width:24px;height:24px}
+.marca b{display:block;font-family:var(--h);font-size:1.3rem;line-height:1}
+.marca small{display:block;color:var(--gris);font-size:.82rem;font-weight:700}
+.barra a.wa{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--celeste-claro);color:var(--celeste-osc)}
+.barra a.wa svg{width:22px;height:22px}
+
+/* portada */
+.portada{padding:24px 0 60px}
+.portada .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+@media(max-width:860px){.portada .wrap{grid-template-columns:minmax(0,1fr);gap:28px}}
+.portada h1{font-size:clamp(2.6rem,7vw,4.4rem);font-weight:700;letter-spacing:-.01em}
+.portada h1 span{color:var(--celeste-osc)}
+.portada p{margin:18px 0 0;font-size:1.15rem;color:var(--gris);max-width:44ch}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.nota-traslado{margin:20px 0 0;font-size:.95rem;color:var(--gris)}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.collage img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--celeste-claro)}
+.collage img:first-child{grid-column:1 / span 2;aspect-ratio:16/11}
+
+/* servicios */
+.servicios{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.servicios{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.servicios{grid-template-columns:1fr}}
+.servicios article{background:var(--blanco);border:1px solid var(--linea);border-radius:20px;padding:22px}
+.servicios h3{font-size:1.3rem}
+.servicios p{margin:8px 0 0;color:var(--gris);font-size:.98rem}
+.servicios article.destacado{background:var(--celeste);border-color:var(--celeste);color:var(--negro)}
+.servicios article.destacado p{color:#123}
+
+/* cambios */
+.cambios{background:var(--blanco)}
+.cambios .cabecera{display:flex;align-items:end;justify-content:space-between;gap:16px}
+.flechas{display:flex;gap:8px;flex:none;margin-bottom:28px}
+.flechas button{width:48px;height:48px;border:2px solid var(--negro);background:var(--blanco);color:var(--negro);cursor:pointer;display:grid;place-items:center}
+.flechas button:hover{background:var(--negro);color:#fff}
+.flechas button:disabled{opacity:.3;cursor:default;background:var(--blanco);color:var(--negro)}
+.flechas svg{width:20px;height:20px}
+.galeria{display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-inline:max(18px,calc((100% - 1080px)/2));scroll-padding-inline:max(18px,calc((100% - 1080px)/2))}
+.galeria::-webkit-scrollbar{display:none}
+.galeria img{flex:0 0 clamp(240px,26vw,340px);aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;background:var(--celeste-claro)}
+@media(max-width:600px){.galeria img{flex-basis:78vw}}
+.contador{margin:14px 0 0;font:600 .95rem var(--h);color:var(--gris)}
+
+/* ficha de turno */
+.turno{background:var(--negro);color:#fff}
+.turno h2{color:#fff}
+.turno .intro{color:#B9C3CC}
+.turno .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+@media(max-width:860px){.turno .wrap{grid-template-columns:minmax(0,1fr);gap:30px}}
+.pasos-ficha{margin:0;padding:0;list-style:none;color:#DDE5EB}
+.pasos-ficha li{padding:8px 0 8px 30px;position:relative}
+.pasos-ficha li::before{content:"";position:absolute;left:0;top:13px;width:16px;height:16px;border-radius:50%;background:var(--celeste)}
+.ficha{background:var(--blanco);color:var(--negro);border-radius:24px;padding:24px;display:grid;gap:14px;position:relative}
+.ficha::before{content:"Ficha de turno";position:absolute;top:-14px;left:22px;padding:4px 12px;border-radius:999px;background:var(--celeste);font:600 .9rem var(--h);color:var(--negro)}
+.ficha label,.ficha legend{display:grid;gap:6px;font-weight:800;font-size:.92rem}
+.ficha input,.ficha select{width:100%;min-width:0;min-height:50px;padding:0 14px;border:2px solid var(--linea);border-radius:12px;background:#fff;color:var(--negro)}
+.ficha input:focus,.ficha select:focus{outline:none;border-color:var(--celeste-osc)}
+.dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:block;position:relative;font-weight:700}
+.chips input{position:absolute;width:1px;height:1px;min-height:0;padding:0;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 14px;border:2px solid var(--linea);border-radius:999px;cursor:pointer}
+.chips input:checked+span{background:var(--celeste);border-color:var(--celeste)}
+.chips input:focus-visible+span{outline:3px solid var(--celeste-osc);outline-offset:2px}
+.foto-aviso{margin:0;padding:12px 14px;border-radius:12px;background:var(--celeste-claro);font-size:.93rem}
+
+/* reseñas */
+.res{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.res{grid-template-columns:1fr}}
+.res figure{margin:0;padding:22px;background:var(--blanco);border:1px solid var(--linea);border-radius:20px}
+.res blockquote{margin:0}
+.res figcaption{margin-top:12px;color:var(--gris);font-size:.92rem;font-weight:700}
+
+/* dónde */
+.donde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:860px){.donde .wrap{grid-template-columns:minmax(0,1fr);gap:24px}}
+table{width:100%;border-collapse:collapse}
+th,td{padding:11px 0;border-bottom:1px solid var(--linea);text-align:left}
+th{font-weight:600}
+tr.hoy th,tr.hoy td{color:var(--celeste-osc);font-weight:800}
+footer{padding:26px 0 34px;border-top:1px solid var(--linea);color:var(--gris);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="wrap">
+    <a class="marca" href="#">
+      <span class="sello"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="9" rx="2.2" ry="2.8"/><ellipse cx="10.2" cy="5.6" rx="2.2" ry="2.8"/><ellipse cx="14.8" cy="5.6" rx="2.2" ry="2.8"/><ellipse cx="18.8" cy="9.2" rx="2.2" ry="2.8"/><path d="M12.4 11c-3.3 0-6.4 3.6-6.4 6.3 0 1.8 1.4 2.7 3 2.7 1.3 0 2.2-.6 3.4-.6s2.1.6 3.4.6c1.6 0 3-.9 3-2.7 0-2.7-3.1-6.3-6.4-6.3z"/></svg></span>
+      <span><b>Huellitas</b><small>Peluquería canina · Sarandí</small></span>
+    </a>
+    <a class="wa" href="https://wa.me/5491158635911" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.78 3.1 15.9c0 2.28.6 4.5 1.73 6.45L3 29l6.83-1.79a12.9 12.9 0 0 0 6.2 1.58h.01c7.13 0 12.93-5.79 12.93-12.9S23.17 3 16.04 3Zm0 23.6h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-4.05 1.06 1.08-3.95-.26-.4a10.66 10.66 0 0 1-1.64-5.68c0-5.9 4.82-10.71 10.74-10.71 5.92 0 10.73 4.8 10.73 10.71 0 5.9-4.82 10.7-10.74 10.7Zm5.89-8.02c-.32-.16-1.91-.94-2.2-1.05-.3-.1-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.29.32-1.12 1.1-1.12 2.68 0 1.58 1.15 3.1 1.31 3.32.16.21 2.26 3.44 5.47 4.83.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg></a>
+  </div>
+</header>
+
+<section class="portada">
+  <div class="wrap">
+    <div>
+      <h1>Cada perro, <span>a su tiempo.</span></h1>
+      <p>Baño y corte en Sarandí, con la paciencia que tu perro necesita. Si es la primera vez o le tiene miedo a la peluquería, lo vamos adaptando de a poco.</p>
+      <div class="acciones">
+        <a class="btn" href="#turno"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.78 3.1 15.9c0 2.28.6 4.5 1.73 6.45L3 29l6.83-1.79a12.9 12.9 0 0 0 6.2 1.58h.01c7.13 0 12.93-5.79 12.93-12.9S23.17 3 16.04 3Zm0 23.6h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-4.05 1.06 1.08-3.95-.26-.4a10.66 10.66 0 0 1-1.64-5.68c0-5.9 4.82-10.71 10.74-10.71 5.92 0 10.73 4.8 10.73 10.71 0 5.9-4.82 10.7-10.74 10.7Zm5.89-8.02c-.32-.16-1.91-.94-2.2-1.05-.3-.1-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.29.32-1.12 1.1-1.12 2.68 0 1.58 1.15 3.1 1.31 3.32.16.21 2.26 3.44 5.47 4.83.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>Pedir turno</a>
+        <a class="btn btn-claro" href="#cambios">Ver cómo quedan</a>
+      </div>
+      <p class="nota-traslado">Lo traés y lo retirás: no hacemos traslados ni servicios a domicilio.</p>
+    </div>
+    <div class="collage">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QuFjvcGSCSWqZt3F2EheOMLQxBD83lVqDBgsbTgT0ktak240DCybrYzJ5Fyd8UAtAgs71kokI44SWiEjYmYHIsfG6F2mP_oCSgeuE-QDsSFJfr4TU2-GIsEeaMNzvEZp7hhJ-uEW0qJrs=w900-h620-k-no" alt="Perro recién bañado en la peluquería">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QYLbeqRpq0tKtQ6m0CnxBo6QncfTUXDXjLnkLVS4550sPftWnL3GdInryghtxw2Ft3ByCw0mrJDeZgSkTP3T6mHRJbyYGdaRHsNMBjpxv0u-aK4tT08YsMGAusj99UkfkUKz2ymr03kPo=w450-h450-k-no" alt="Perro después del corte">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RHwptfpjtomZ1MsJSyaZTomZaG-bpe5ISpxrMeSIyZNiwxjvpjUhTJH7I2ygWOU1gOrXTyv8N-1LtTh3WsMZ3BrhwzBQo13Za0peDAkjRw_yJNwPQKN9lTsqPrVm7GVAdl3ys7CdS0qhqP=w450-h450-k-no" alt="Perro con su pañuelo después del baño">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2>Qué hacemos</h2>
+    <p class="intro">Todo con turno y sin apuro, para que cada perro tenga una experiencia tranquila.</p>
+    <div class="servicios">
+      <article><h3>Baño</h3><p>Baño completo, secado y perfume. Sale limpio y con su pañuelo.</p></article>
+      <article><h3>Baño y corte</h3><p>Corte de raza o a gusto, según lo que necesite tu perro.</p></article>
+      <article class="destacado"><h3>Adaptación a la pelu</h3><p>Para cachorros y perros miedosos: vamos de a poco hasta que se sienta cómodo.</p></article>
+      <article><h3>Pet shop</h3><p>Alimentos y accesorios en nuestro showroom, @huellitas.petshop1.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cambios" id="cambios">
+  <div class="wrap cabecera">
+    <div>
+      <h2>Así salen de Huellitas</h2>
+      <p class="intro">Algunos de los perros que pasaron por la peluquería. Deslizá para ver más.</p>
+    </div>
+    <div class="flechas">
+      <button type="button" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" id="sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="galeria" id="galeria" tabindex="0" aria-label="Fotos de perros después de la peluquería">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R5o0vO4YzytpG70VmK3FWMDRjXVo7v4EMUDVIKRZvZKvNougdwZ-BlIzddcvUK54nAsMc4IZRlEx3e3R3xdeFkvDb7JyOkjDjO9WYAThwZ60TbsDWf5K-mF8hFDvJsLbsbrVlu_H5B7ePE=w500-h620-k-no" alt="Perro después del baño" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RjwTILg3Bc74As416n2RlCzWaYfV4CTvq2LgOcj96jObHR6Gou3CVUKVpH0uijFDE4CGfmfWQNqlm41wkw2VCSPU7-wBiA6GcnMxCWpz3yxlIbe8KgUwVZ27_t7VgZEqW7M379ZUDJKLc=w500-h620-k-no" alt="Perro después del corte" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TrFuqsaSYcSsuZXJP7YzeR6mzW8BlVf2tdrQBsKq6cNJ0hf5F8RkshOu_s63CIxV2bsFpzctz6rqsxivc_Pl7UnWCt-c0rVluW_aOq8Sz3rd6jReawPY0LpghPKk3lirCBD234yAe3nA5t=w500-h620-k-no" alt="Perro recién peinado" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R74ImlgXC7DNf63W13pFQ6rNfuJhrT45D8yj3FPWPbU7cdee1cvVkVdL6XLuBhI9pd-blGmv5P_Qo7DOljUzhcAhw-iCt0S5JA_iI5PcWWTiPOCtL0c9rTjfZZi62B5YYMSkoMS5VmhY7m=w500-h620-k-no" alt="Perro con pañuelo" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Srt7_udz5gcnECfhUNXa7aLVDlPZPjPpsuhzPBVe1WF1M3c2wbUhpfcVmEYVL4H84-eOkXhhCevxMHSnR0VyJMJoO5nXOh4riI7ehXgycRY9fXkS-hn1NfAKsjBiCj1O6iKAU2anOC_f8=w500-h620-k-no" alt="Perro después del baño" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RNDn6Z6lEfsjeQj3DcaFYorVsR5HkAqm3N5vHLpRpMch4nx2_ruGFDqRxRjN6OT1vCXGLxjFwfYBONB0hsbXbiFxrlefgYvZMYpOjXm9JFVgTON4SN_gtA_1B82gQzEQZ0UgO3C85yW8Wi=w500-h620-k-no" alt="Perro sentado en la mesa de la peluquería" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QYLbeqRpq0tKtQ6m0CnxBo6QncfTUXDXjLnkLVS4550sPftWnL3GdInryghtxw2Ft3ByCw0mrJDeZgSkTP3T6mHRJbyYGdaRHsNMBjpxv0u-aK4tT08YsMGAusj99UkfkUKz2ymr03kPo=w500-h620-k-no" alt="Perro después del corte" loading="lazy">
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RHwptfpjtomZ1MsJSyaZTomZaG-bpe5ISpxrMeSIyZNiwxjvpjUhTJH7I2ygWOU1gOrXTyv8N-1LtTh3WsMZ3BrhwzBQo13Za0peDAkjRw_yJNwPQKN9lTsqPrVm7GVAdl3ys7CdS0qhqP=w500-h620-k-no" alt="Perro con su pañuelo" loading="lazy">
+  </div>
+  <div class="wrap"><p class="contador" id="contador"></p></div>
+</section>
+
+<section class="turno" id="turno">
+  <div class="wrap">
+    <div>
+      <h2>Pedí tu turno</h2>
+      <p class="intro">Para darte turno necesitamos conocer a tu perro. Completá la ficha y te llega todo junto por WhatsApp:</p>
+      <ul class="pasos-ficha">
+        <li>Cómo se llama y qué edad tiene</li>
+        <li>Qué servicio necesita</li>
+        <li>Cuándo fue a una peluquería por última vez</li>
+        <li>Si tiene las vacunas al día</li>
+        <li>Y una foto actual, de cuerpo entero</li>
+      </ul>
+    </div>
+    <form class="ficha" id="ficha">
+      <div class="dos">
+        <label>Nombre del perro<input id="perro" placeholder="Ej.: Lola" required></label>
+        <label>Edad<input id="edad" placeholder="Ej.: 3 años"></label>
+      </div>
+      <fieldset>
+        <legend>¿Qué servicio necesita?</legend>
+        <div class="chips">
+          <label><input type="radio" name="servicio" value="baño" checked><span>Baño</span></label>
+          <label><input type="radio" name="servicio" value="baño y corte"><span>Baño y corte</span></label>
+          <label><input type="radio" name="servicio" value="adaptación a la peluquería"><span>Adaptación</span></label>
+        </div>
+      </fieldset>
+      <div class="dos">
+        <label>Última peluquería
+          <select id="ultima">
+            <option>nunca fue</option>
+            <option>hace menos de 2 meses</option>
+            <option>hace 2 a 6 meses</option>
+            <option>hace más de 6 meses</option>
+          </select>
+        </label>
+        <label>Vacunas al día
+          <select id="vacunas">
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+      </div>
+      <p class="foto-aviso">Cuando se abra WhatsApp, mandá también una <b>foto actual de cuerpo entero</b> y el <b>carnet de vacunas</b>, así vemos el tamaño y el estado del pelo.</p>
+      <button class="btn" type="submit"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.78 3.1 15.9c0 2.28.6 4.5 1.73 6.45L3 29l6.83-1.79a12.9 12.9 0 0 0 6.2 1.58h.01c7.13 0 12.93-5.79 12.93-12.9S23.17 3 16.04 3Zm0 23.6h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-4.05 1.06 1.08-3.95-.26-.4a10.66 10.66 0 0 1-1.64-5.68c0-5.9 4.82-10.71 10.74-10.71 5.92 0 10.73 4.8 10.73 10.71 0 5.9-4.82 10.7-10.74 10.7Zm5.89-8.02c-.32-.16-1.91-.94-2.2-1.05-.3-.1-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.29.32-1.12 1.1-1.12 2.68 0 1.58 1.15 3.1 1.31 3.32.16.21 2.26 3.44 5.47 4.83.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>Mandar ficha por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Lo que dicen las familias</h2>
+    <p class="intro">4,9 de 5 en Google, con 127 reseñas.</p>
+    <div class="res">
+      <figure><blockquote>“Encontrar a Giuly fue lo mejor que nos pasó. Tenía mucho miedo de dejar a mi bebé chiquito en alguna peluquería por primera vez, hasta que la encontré.”</blockquote><figcaption>Rocío N., en Google</figcaption></figure>
+      <figure><blockquote>“Me encanta el amor y la paciencia con la que tratan a todos los perritos. Giuli una genia. Recomiendo 10/10.”</blockquote><figcaption>Maggie D., en Google</figcaption></figure>
+      <figure><blockquote>“Llevamos a nuestros 2 perros de raza grande y quedan impecables.”</blockquote><figcaption>Cliente, en Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="donde" style="padding-top:0">
+  <div class="wrap">
+    <div>
+      <h2>Dónde estamos</h2>
+      <p class="intro">Zárate 279, Sarandí, Avellaneda.</p>
+      <p><a class="btn btn-claro" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa+Canina+Huellitas+Z%C3%A1rate+279+Sarand%C3%AD" target="_blank" rel="noopener">Cómo llegar</a></p>
+    </div>
+    <div>
+      <table aria-label="Horarios"><tbody id="horarios"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Peluquería Canina Huellitas · <a href="https://www.instagram.com/peluqueria.huellitas/">Instagram</a></span>
+    <span>Muestra hecha por <a href="https://pazstudio.com.ar">Paz Studio</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('galeria'),fotos=g.querySelectorAll('img'),ant=document.getElementById('ant'),sig=document.getElementById('sig'),cont=document.getElementById('contador');
+  function paso(){return fotos[0].getBoundingClientRect().width+4}
+  function act(){var i=Math.round(g.scrollLeft/paso());cont.textContent=(i+1)+' / '+fotos.length;ant.disabled=g.scrollLeft<5;sig.disabled=g.scrollLeft+g.clientWidth>=g.scrollWidth-5}
+  ant.addEventListener('click',function(){g.scrollBy({left:-paso(),behavior:'smooth'})});
+  sig.addEventListener('click',function(){g.scrollBy({left:paso(),behavior:'smooth'})});
+  g.addEventListener('scroll',act,{passive:true});window.addEventListener('resize',act);act();
+  var hoy=new Date().getDay(), tb=document.getElementById('horarios');
+  [['Lunes a viernes','9 a 18 h',hoy>=1&&hoy<=5],['Sábados','9 a 14 h',hoy===6],['Domingos','Cerrado',hoy===0]].forEach(function(r){
+    var tr=document.createElement('tr');if(r[2])tr.className='hoy';tr.innerHTML='<th>'+r[0]+'</th><td>'+r[1]+'</td>';tb.appendChild(tr);
+  });
+  document.getElementById('ficha').addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=document.getElementById('perro').value.trim()||'mi perro',ed=document.getElementById('edad').value.trim(),
+        s=document.querySelector('input[name=servicio]:checked').value,u=document.getElementById('ultima').value,v=document.getElementById('vacunas').value;
+    var msg='Hola Giuli! Quiero pedir un turno.\n\nNombre: '+p+(ed?'\nEdad: '+ed:'')+'\nServicio: '+s+'\nÚltima peluquería: '+u+'\nVacunas al día: '+v+'\n\nAhora te mando la foto de cuerpo entero y el carnet.';
+    window.open('https://wa.me/5491158635911?text='+encodeURIComponent(msg),'_blank');
+  });
+})();
+</script>
+</body>
+</html>
